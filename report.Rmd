@@ -1,0 +1,27 @@
+---
+title: "NCA report"
+author: "..."
+date: "`r format(Sys.time(), '%Y年%m月%d日')`"
+output: html_document
+df_print: paged
+params:
+  n: NA
+  conc: NA
+---
+
+
+# summary
+```{r }
+knitr::kable(params$n)
+
+```
+
+# Including Plots
+```{r}
+ggplot(conc, aes(x=Time, y=Conc, group=Subject))+ geom_line()
+#plot(rnorm(params$conc), rnorm(params$n))
+```
+```{r,out.width='100%',out.height='100%', fig.height=20, fig.width=15, fig.align="left"}
+ggplot(conc, aes(x=Time, y=Conc, group=Subject))+ geom_line()
+```
+
